@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyMate</title>
+<link rel="stylesheet" href="/static/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="splash" hidden><h2 id="splashText"></h2><p>Loading your Classroom…</p></div>
+
+<header>
+  <div class="brand"><span class="logo">S</span>StudyMate</div>
+  <div id="user" hidden><span id="uname"></span><span id="avatar"></span><a href="/logout">Sign out</a></div>
+</header>
+
+<section id="welcome" hidden>
+  <h2>Never miss a deadline again.</h2>
+  <p>Connect Google Classroom to see your assignments, get reminders 2 days, 1 day and 2 hours ahead, and ask Gemini about your class files.</p>
+  <a class="btn" href="/login">Connect Google Classroom</a>
+</section>
+
+<main id="app" hidden>
+  <section class="hero">
+    <div><p id="date"></p><h2 id="greet"></h2><p id="sub"></p></div>
+    <div class="next"><small>Next deadline</small><b id="nextTime">–</b><span id="nextTitle"></span></div>
+  </section>
+  <section class="stats" id="stats"></section>
+
+  <div class="cols">
+    <div class="left">
+      <div class="head"><h2>Assignments</h2>
+        <div class="tabs" id="tabs">
+          <button data-f="all" class="on">All</button><button data-f="upcoming">Upcoming</button>
+          <button data-f="overdue">Overdue</button><button data-f="done">Done</button>
+        </div>
+      </div>
+      <div id="assignments"></div>
+      <div class="head"><h2>Classroom files</h2><small>Import a file so Mate can read it</small></div>
+      <div id="files"><p class="empty">Loading…</p></div>
+    </div>
+
+    <aside class="chat">
+      <h2>Ask Mate</h2>
+      <small id="imp">0 files imported</small>
+      <div id="chips"></div>
+      <div id="log"><div class="msg bot">Hi! Import a file from the left, then ask me anything about it.</div></div>
+      <div class="row">
+        <input id="msg" placeholder="Explain this assignment…" autocomplete="off">
+        <button class="btn" id="send">Send</button>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="toasts"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script src="/static/app.js?v=4"></script>
+</body>
+</html>

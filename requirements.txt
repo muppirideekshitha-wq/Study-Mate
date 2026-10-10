@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+itsdangerous
+python-dotenv
+google-api-python-client
+google-auth-oauthlib
+google-genai
+pypdf
